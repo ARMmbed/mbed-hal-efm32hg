@@ -1,0 +1,27 @@
+{
+  "name": "mbed-hal-efm32hg",
+  "version": "0.0.1",
+  "description": "mbed low-level HAL implementation for Silicon Labs EFM32 Happy Gecko Microcontrollers",
+  "keywords": [
+    "mbed",
+    "hal",
+    "efm32hg",
+    "efm32",
+    "silabs"
+  ],
+  "author": "aksel.mellbye@silabs.com",
+  "repository": {
+    "url": "https://github.com/ARMmbed/mbed-hal-efm32hg.git",
+    "type": "git"
+  },
+  "homepage": "https://github.com/ARMmbed/mbed-hal-efm32hg",
+  "licenses": [
+    {
+      "url": "https://spdx.org/licenses/Apache-2.0",
+      "type": "Apache-2.0"
+    }
+  ],
+  "extraIncludes": [
+    "mbed-hal-efm32hg"
+  ]
+}
