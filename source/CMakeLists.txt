@@ -21,9 +21,22 @@
 if(${CMAKE_C_COMPILER_ID} STREQUAL GNU)
     set(STARTUP_ASM "bootstrap_gcc/startup_efm32hg.S")
     set(STARTUP_SRC "")
-elseif(${CMAKE_C_COMPILER_ID} STREQUAL "ARMCC")
+elseif(${CMAKE_C_COMPILER_ID} STREQUAL ARMCC)
     set(STARTUP_ASM "bootstrap_armcc/startup_efm32hg.S")
     set(STARTUP_SRC "")
+    
+    # unfortunately, for armlink we have to pass the executable startup code as
+    # an object file, not as part of an archive.
+    # 
+    add_library(mbed-hal-efm32hg_bootcode OBJECT ${STARTUP_ASM})
+
+    # This is the "neatest" way of making sure the startup code gets linked
+    # into every executable. Needless to say this is, despite its brevity,
+    # not neat.
+    macro (add_executable _name)
+        _add_executable(${ARGV} $<TARGET_OBJECTS:mbed-hal-efm32hg_bootcode>)
+    Endmacro()
+    
 else()
     set(STARTUP_ASM "")
     set(STARTUP_SRC "")
