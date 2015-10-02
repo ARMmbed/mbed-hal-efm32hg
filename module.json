@@ -9,7 +9,7 @@
     "efm32",
     "silabs"
   ],
-  "author": "aksel.mellbye@silabs.com",
+  "author": "Aksel Skauge Mellbye <aksel.mellbye@silabs.com>",
   "repository": {
     "url": "https://github.com/ARMmbed/mbed-hal-efm32hg.git",
     "type": "git"
@@ -22,6 +22,9 @@
     }
   ],
   "extraIncludes": [
-    "mbed-hal-efm32hg"
-  ]
+    "mbed-hal-efm32"
+  ],
+  "dependencies": {
+    "mbed-hal-silabs": "~0.5.0"
+  }
 }
