@@ -62,6 +62,7 @@
 // Redefine OPEN_MAX from sys_limits.h to save on RAM.
 // Effect: maximum amount of file handlers = OPEN_MAX
 // This is not going to have an impact, since this is a RAM-limited part anyway.
+#undef OPEN_MAX
 #define OPEN_MAX                24
 
 #include "objects.h"
