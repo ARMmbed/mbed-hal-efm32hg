@@ -142,6 +142,8 @@ Reset_Handler:
     bgt    .flash_to_ram_loop
 .flash_to_ram_loop_end:
 
+    ldr    r0, =pre_uvisor_init
+    blx    r0
     ldr    r0, =_start
     bx     r0
     .pool

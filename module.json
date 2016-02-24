@@ -25,6 +25,6 @@
     "mbed-hal-efm32"
   ],
   "dependencies": {
-    "mbed-hal-silabs": "*"
+    "mbed-hal-silabs": "^1.4.0"
   }
 }
